@@ -1,0 +1,36 @@
+server:
+  port: 9002
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/order_db
+    username: test
+    password: pasw0rd
+  jpa:
+    properties:
+      hibernate:
+        naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: create
+    show_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: elinvar_case
+      auto-offset-reset: earliest
+    producer:
+      bootstrap-servers: localhost:9092
+topic:
+  input:
+    order-request: order.request
+    onboard-customer: onboard.customer
+  output:
+    create-order: create.order
+    customer-balance: customer.balance
+price-handler:
+  url: http://localhost:9001/getPrice/
+
