@@ -3,7 +3,7 @@ This project represents oversimplified/toy order managment system (OOMS).
 It is designed to allow customers to buy assets (ISINs), save orders and update customer balance.  
 
 **Architecture:**
-- System consists of 3 microservices working together
+- System consists of 3 microservices ( spring-boot apps ) working together 
     - *Price-Handler* provides prices of any ISIN via REST-API  
     - *Customer-service*, *Order-Service* communicate via kafka
 - *Customer-Service*
