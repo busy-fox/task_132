@@ -11,7 +11,7 @@ It is designed to allow customers to buy assets (ISINs), save orders and update 
     - is responsible for generating purchase transactions ( *order.request* kafka topic )
 - *Order-Service* 
     - is reponsible for ISIN "purchase".
-    - is reponsible for onboarding new customers 
+    - is reponsible for onboarding new customers ( *onboard.customer* topic ) 
     - has a database to store customers accounts (balance) and orders 
 
 ![](schema.png?raw=true "Title")
